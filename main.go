@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"go-my-resume/app"
+	"go-my-resume/pkg/workexperience"
 	"html/template"
 	"net/http"
 )
@@ -22,5 +25,12 @@ func index(w http.ResponseWriter, req *http.Request) {
 }
 
 func workExperience(w http.ResponseWriter, req *http.Request) {
+	session, err := app.GetMongoSession()
+	if err != nil {
+		fmt.Println("Cannot get mongo session", err)
+	}
+	defer session.Close()
+
+	workexperience.InquiryWorkExperience(session)
 	tpl.ExecuteTemplate(w, "workexperience.gohtml", nil)
 }

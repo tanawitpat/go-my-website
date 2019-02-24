@@ -2,19 +2,16 @@ package workexperience
 
 import (
 	"fmt"
-	"go-my-resume/app"
-	"net/http"
+
+	"github.com/globalsign/mgo"
 )
 
-func InquiryWorkExperience(w http.ResponseWriter, req *http.Request) {
-	session, err := app.GetMongoSession()
-	if err != nil {
-		fmt.Println("Cannot get mongo session", err)
-	}
+func InquiryWorkExperience(session *mgo.Session) {
 	workExperience := []WorkExperienceDB{}
-	defer session.Close()
 	db := session.DB("myresume")
-	db.C("work_experience").Find(nil).All(&workExperience)
-	fmt.Println(workExperience)
-	tpl.ExecuteTemplate(w, "workexperience.gohtml", nil)
+	if err := db.C("work_experience").Find(nil).All(&workExperience); err != nil {
+		fmt.Println("Cannot get work experience from the database: ", err)
+	} else {
+		fmt.Println(workExperience)
+	}
 }
