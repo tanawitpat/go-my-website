@@ -13,57 +13,23 @@
 <div class="container">
     <h1>Experience</h1>
     <hr/>
-    <div class="row">
-        <div class="col-sm-8"><b>KASIKORN BUSINESS-TECHNOLOGY GROUP</b></div>
-        <div class="col-sm-4" align="right"><b>Nonthaburi</b></div>
-        <div class="col-sm-8">Associate Visionary Architect</div>
-        <div class="col-sm-4" align="right">July 2018-Present</div>
-        <ul style="list-style-type:type:square;">
-            <li>Develop backend for merchant payment platform project and write API test using Go and Robot Framework.</li>
-            <li>Develop automate credit scoring services end-to-end from gathering the requirements, designing the architecture, setting up servers, developing the services, and writing unit test, integration test, and API test using Python, Go, Docker, and Robot Framework.</li>
-            <li>Develop a website for managing KPlus today content in KPlus application using React.</li>
-            <li>Perform knowledge sharing session about Robot framework and CI/CD for 50+ team members.</li>
-            <li>Research on machine learning techniques to improve models for identifying potential personal loan customers.</li>
-        </ul>
-    </div>
-    <div class="row">
-        <div class="col-sm-8"><b>CHULALONGKORN BUSINESS SCHOOL (CBS)</b></div>
-        <div class="col-sm-4" align="right"><b>Bangkok</b></div>
-        <div class="col-sm-8">Teaching Assistant</div>
-        <div class="col-sm-4" align="right">January 2018-April 2018</div>
-        <ul style="list-style-type:type:square;">
-            <li>Teaching assistant in Data Science Practicum class. The topics include data wrangling, exploratory data analysis, machine learning and A/B testing.</li>
-        </ul>
-    </div>
-    <div class="row">
-        <div class="col-sm-8"><b>CHULALONGKORN BUSINESS SCHOOL (CBS)</b></div>
-        <div class="col-sm-4" align="right"><b>Bangkok</b></div>
-        <div class="col-sm-8">Research Assistant</div>
-        <div class="col-sm-4" align="right">April 2017-October 2017</div>
-        <ul style="list-style-type:type:square;">
-            <li>Conducted a survey project from building a sampling frame, collecting data from 200+ startup owners, and analyzing data using descriptive and inferential statistics.</li>
-        </ul>
-    </div>
-    <div class="row">
-        <div class="col-sm-8"><b>KASIKORN BUSINESS-TECHNOLOGY GROUP</b></div>
-        <div class="col-sm-4" align="right"><b>Nonthaburi</b></div>
-        <div class="col-sm-8">Data Scientist Intern</div>
-        <div class="col-sm-4" align="right">June 2017-July 2017</div>
-        <ul style="list-style-type:type:square;">
-            <li>Identified distinct characteristics of potentially default credit card customers through a study of 5 million transactions and proposed solutions to prevent credit approval for credit card applicants that obtain such characteristics.</li>
-            <li>Won 1st place in machine learning internship project competition.</li>
-        </ul>
-    </div>
-    <div class="row">
-        <div class="col-sm-8"><b>KRUNGSRI SECURITIES PUBLIC COMPANY LIMITED</b></div>
-        <div class="col-sm-4" align="right"><b>Bangkok</b></div>
-        <div class="col-sm-8">Intern</div>
-        <div class="col-sm-4" align="right">June 2016</div>
-        <ul style="list-style-type:type:square;">
-            <li>Analyzed business performance and financial reports of a company of interest and identified its target stock price.</li>
-            <li>Gained concrete understanding of capital market and investment strategy.</li>
-        </ul>
-    </div>
+    {{range .}}
+        <div class="row">
+            <div class="col-sm-8"><b>{{.CompanyName}}</b></div>
+            <div class="col-sm-4" align="right"><b>{{.CompanyLocation}}</b></div>
+            <div class="col-sm-8">{{.Position}}</div>
+            {{if not .IsCurrentWork}}
+                <div class="col-sm-4" align="right">{{.StartMonth}} {{.StartYear}}-{{.EndMonth}} {{.EndYear}}</div>
+            {{else}}
+                <div class="col-sm-4" align="right">{{.StartMonth}} {{.StartYear}}-Present</div>
+            {{end}}
+            <ul style="list-style-type:type:square;">
+            {{range .Description}}
+                <li>{{.}}</li>
+            {{end}}
+            </ul>
+        </div>
+    {{end}}
 </div>
 </body>
 </html>
