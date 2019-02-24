@@ -15,6 +15,8 @@ func init() {
 }
 
 func main() {
+	fsStatic := http.FileServer(http.Dir("static"))
+	http.Handle("/css/", fsStatic)
 	http.HandleFunc("/", index)
 	http.HandleFunc("/workexperience", workExperience)
 	http.ListenAndServe(":8080", nil)
