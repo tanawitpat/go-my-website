@@ -13,9 +13,14 @@ func init() {
 
 func main() {
 	http.HandleFunc("/", index)
+	http.HandleFunc("/workexperience", workExperience)
 	http.ListenAndServe(":8080", nil)
 }
 
 func index(w http.ResponseWriter, req *http.Request) {
 	tpl.ExecuteTemplate(w, "index.gohtml", nil)
+}
+
+func workExperience(w http.ResponseWriter, req *http.Request) {
+	tpl.ExecuteTemplate(w, "workexperience.gohtml", nil)
 }
