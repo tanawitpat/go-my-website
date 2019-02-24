@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"go-my-resume/app"
-	"go-my-resume/pkg/workexperience"
+	"go-my-resume/internal/pkg/workexperience"
 	"html/template"
 	"net/http"
 )
@@ -11,7 +11,7 @@ import (
 var tpl *template.Template
 
 func init() {
-	tpl = template.Must(template.ParseGlob("templates/*"))
+	tpl = template.Must(template.ParseGlob("internal/templates/*"))
 }
 
 func main() {
@@ -31,6 +31,6 @@ func workExperience(w http.ResponseWriter, req *http.Request) {
 	}
 	defer session.Close()
 
-	workexperience.InquiryWorkExperience(session)
-	tpl.ExecuteTemplate(w, "workexperience.gohtml", nil)
+	workExps, err := workexperience.InquiryWorkExperience(session)
+	tpl.ExecuteTemplate(w, "workexperience.gohtml", workExps)
 }
