@@ -1,20 +1,105 @@
 html,body {
     height: 100%;
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
   
-.workExperienceDetail {
-    animation: moveInBottom .4s ease-out .2s;
-    animation-fill-mode: backwards;
+.frame {
+	background: #f1f1f1;
+	padding: 100px 0;
 }
 
-@keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(20px)
-    }
-    100%{
-        opacity: 1;
-        transform: translate(0)
-    }
+h1.header {
+	letter-spacing: 2px;
+}
+
+h5.section-name {
+	font-size: 18px;
+	padding: 20px;
+	margin: 0px;
+	color: #333333;
+	letter-spacing: 1px;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+/* ############# Heading ############# */
+h1, h2, h3, h4, h5, h6 {
+	color: #262626;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: 'Lato', sans-serif;
+}
+
+/* ############# side-bar ############# */
+.side-bar {
+	background: #fff;
+}
+.side-bar .profile {
+	padding: 25px;
+	border-bottom: 1px solid #e6e6e6;
+}
+.side-bar .profile li span {
+	width: 50%;
+	float: left;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.side-bar .profile li p {
+	margin: 0px;
+	line-height: 30px;
+}
+
+/* Content */
+.main-content {
+	width: 100%;
+	display: inline-block;
+	background: #fff;
+}
+
+/* ############# navigation ############# */
+.navigation {
+	margin: 10px 0 10px;
+	padding: 10px 0px 10px 0px;
+	list-style-type: none;
+}
+
+.navigation li a {
+	color: inherit;
+	display: block;
+	line-height: 40px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* ############# work-experience ############# */
+.work-experience .work-duration {
+	font-size: 15px;
+	font-weight: bold;
+	display: inline-block;
+	width: 120px;
+	text-align: center;
+}
+.work-experience .company-logo {
+	position: absolute;
+	right: 0px;
+}
+.work-experience .content {
+	margin-bottom: 40px;
+}
+.work-experience h6 {
+	margin-top: 0px;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.work-experience p {
+	margin-bottom: 0px;
+	font-size: 14px;
+	line-height: 24px;
+}
+.work-experience .media-body {
+	position: relative;
 }

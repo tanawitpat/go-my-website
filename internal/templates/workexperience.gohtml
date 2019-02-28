@@ -1,37 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/style.css" /> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <title>Experience</title>
+        <title>Experience - Tanawit Pattanaveerangkoon</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <h1>Experience</h1>
-            <hr/>
-            <div class="workExperienceDetail">
-                {{range .}}
-                    <div class="row">
-                        <div class="col-sm-8"><b>{{.CompanyName}}</b></div>
-                        <div class="col-sm-4" align="right"><b>{{.CompanyLocation}}</b></div>
-                        <div class="col-sm-8">{{.Position}}</div>
-                        {{if not .IsCurrentWork}}
-                            <div class="col-sm-4" align="right">{{.StartMonth}} {{.StartYear}}-{{.EndMonth}} {{.EndYear}}</div>
-                        {{else}}
-                            <div class="col-sm-4" align="right">{{.StartMonth}} {{.StartYear}}-Present</div>
-                        {{end}}
-                        <ul style="list-style-type:type:square;">
-                        {{range .Description}}
-                            <li>{{.}}</li>
-                        {{end}}
-                        </ul>
+        <div class="frame">
+            <div class="container"> 
+                <h1 class="header">Tanawit Pattanaveerangkoon</h2>
+                <div class="row"> 
+                    <div class="col-md-3" style="margin-top:30px !important;">
+                        <div class="side-bar"> 
+                            <ul class="navigation">
+                                <li><a href="">About me</a></li>
+                                <li><a href="">Education</a></li>
+                                <li><a href="">Experience</a></li>
+                                <li><a href="">Projects</a></li>
+                                <li><a href="">Awards</a></li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="side-bar"> 
+                            <h5 class="section-name">Profile</h5>
+                            <img src="images/profile.jpg" class="img-responsive" alt="">
+                            <p style="padding:20px !important;;">I am a software engineer.</p>
+                        </div>
                     </div>
-                {{end}}
+                    <div class="col-md-9" style="margin-top:40px !important;">
+                        <div class="main-content"> 
+                            <h5 class="section-name">Experience</h5>
+                            <div class="work-experience" style="padding:30px !important;;">
+                                {{range .}}
+                                    <div class="content">
+                                        {{if not .IsCurrentWork}}
+                                                <div class="media-left"><span class="work-duration">{{.StartMonth}} {{.StartYear}}<br>-<br>{{.EndMonth}} {{.EndYear}}</span></div>
+                                            {{else}}
+                                                <div class="media-left"><span class="work-duration">{{.StartMonth}} {{.StartYear}}<br>-<br>Present</span></div>
+                                        {{end}}
+                                        <div class="media-body">
+                                            <div class="company-logo"><img src="images/{{.CompanyImagePath}}" alt=""></div>
+                                            <h6>{{.Position}}</h6>
+                                            <p>{{.CompanyName}}</p>
+                                            <p>{{.CompanyLocation}}</p>
+                                            <p style="margin-top:10px !important;">
+                                                {{range .Description}}
+                                                    • {{.}}<br>
+                                                {{end}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {{end}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
