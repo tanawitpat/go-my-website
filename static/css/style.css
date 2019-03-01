@@ -59,11 +59,12 @@ h1, h2, h3, h4, h5, h6 {
 /* ############# navigation ############# */
 .navigation {
 	margin: 10px 0 10px;
-	padding: 10px 0px 10px 0px;
+	padding: 1px 0px 1px 0px;
 	list-style-type: none;
 }
 
 .navigation li a {
+	text-decoration: none; 
 	color: inherit;
 	display: block;
 	line-height: 40px;
@@ -72,6 +73,11 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
+}
+
+.navigation li a:hover {
+	background: #494949;
+	color: #fff;
 }
 
 /* ############# work-experience ############# */
@@ -91,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .work-experience h6 {
 	margin-top: 0px;
-	letter-spacing: 1px;
+	letter-spacing: 0px;
 	font-size: 14px;
 	font-weight: bold;
 }
