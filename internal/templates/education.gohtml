@@ -30,28 +30,22 @@
                     </div>
                     <div class="col-md-9" style="margin-top:40px !important;">
                         <div class="main-content"> 
-                            <h5 class="section-name">Experience</h5>
+                            <h5 class="section-name">Education</h5>
                             <div class="work-experience" style="padding:30px !important;;">
-                                {{range .}}
-                                    <div class="content">
-                                        {{if not .IsCurrentWork}}
-                                                <div class="media-left"><span class="work-duration">{{.StartMonth}} {{.StartYear}}<br>-<br>{{.EndMonth}} {{.EndYear}}</span></div>
-                                            {{else}}
-                                                <div class="media-left"><span class="work-duration">{{.StartMonth}} {{.StartYear}}<br>-<br>Present</span></div>
-                                        {{end}}
-                                        <div class="media-body">
-                                            <div class="company-logo"><img src="images/{{.CompanyImagePath}}" alt=""></div>
-                                            <h6>{{.Position}}</h6>
-                                            <p>{{.CompanyName}}</p>
-                                            <p>{{.CompanyLocation}}</p>
-                                            <p style="margin-top:10px !important;">
-                                                {{range .Description}}
-                                                    • {{.}}<br>
-                                                {{end}}
-                                            </p>
-                                        </div>
+                                <div class="content">
+                                    <div class="media-left"><span class="work-duration">2014-2018</span></div>
+                                    <div class="media-body">
+                                        <div class="company-logo"><img src="images/chula.png" alt=""></div>
+                                        <h6>Chulalongkorn University</h6>
+                                        <p>Bachelor of Science in Statistics</p>
+                                        <p>{{.CompanyLocation}}</p>
+                                        <p style="margin-top:10px !important;">
+                                            <b>Leadership</b><br>
+                                            • Head of Statistics Department Exhibition in Banshi Chula Expo 2017.<br>
+                                            • CU Statistics Club invited Excel Lecturer.
+                                        </p>
                                     </div>
-                                {{end}}
+                                </div>
                             </div>
                         </div>
                     </div>
