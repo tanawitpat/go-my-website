@@ -1,0 +1,128 @@
+html,body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+  
+.frame {
+	background: #f1f1f1;
+	padding: 60px 0;
+}
+
+h1.header {
+	letter-spacing: 2px;
+}
+
+h5.section-name {
+	font-size: 18px;
+	padding: 18px 20px;
+	margin: 0px;
+	color: #333333;
+	letter-spacing: 1px;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+/* ############# Heading ############# */
+h1, h2, h3, h4, h5, h6 {
+	color: #262626;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: 'Lato', sans-serif;
+}
+
+/* ############# side-bar frame ############# */
+.navigation-frame {
+	background: #fff;
+	margin-top: 40px !important;
+}
+
+.profile-frame {
+	background: #fff;
+	margin-top: 20px !important;
+}
+
+/* ############# profile ############# */
+.profile-frame .profile {
+	padding: 25px;
+	border-bottom: 1px solid #e6e6e6;
+}
+.profile-frame .profile li span {
+	width: 50%;
+	float: left;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.profile-frame .profile li p {
+	margin: 0px;
+	line-height: 30px;
+}
+
+.profile-frame p {
+	padding:20px !important;;
+}
+
+/* Content */
+.main-content {
+	width: 100%;
+	display: inline-block;
+	background: #fff;
+	margin-top:40px !important;
+}
+
+/* ############# navigation ############# */
+.navigation {
+	margin: 10px 0 10px;
+	padding: 1px 0px 1px 0px;
+	list-style-type: none;
+}
+
+.navigation li a {
+	text-decoration: none; 
+	color: inherit;
+	display: block;
+	line-height: 40px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.navigation li a:hover {
+	background: #e4e4e4;
+}
+
+/* ############# work-experience ############# */
+
+.work-experience {
+	padding: 30px 30px 0px 30px !important;
+}
+
+.work-experience .work-duration {
+	font-size: 14px;
+	font-weight: bold;
+	display: inline-block;
+	width: 120px;
+	text-align: center;
+}
+
+.work-experience .company-logo {
+	position: absolute;
+	right: 0px;
+}
+.work-experience .content {
+	margin-bottom: 40px;
+}
+.work-experience h6 {
+	margin-top: 0px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.work-experience p {
+	margin-bottom: 0px;
+	font-size: 14px;
+	line-height: 24px;
+}
+.work-experience .media-body {
+	position: relative;
+}
