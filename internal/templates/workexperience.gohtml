@@ -33,11 +33,13 @@
                             <div class="work-experience">
                                 {{range .}}
                                     <div class="content">
-                                        {{if not .IsCurrentWork}}
-                                                <div class="media-left"><span class="work-duration">{{.StartMonth}} {{.StartYear}}<br>-<br>{{.EndMonth}} {{.EndYear}}</span></div>
+                                        <div class="media-left">
+                                            {{if not .IsCurrentWork}}
+                                                <h6 class="work-duration">{{.StartMonth}} {{.StartYear}}<br>-<br>{{.EndMonth}} {{.EndYear}}</h6>
                                             {{else}}
-                                                <div class="media-left"><span class="work-duration">{{.StartMonth}} {{.StartYear}}<br>-<br>Present</span></div>
-                                        {{end}}
+                                                <h6 class="work-duration">{{.StartMonth}} {{.StartYear}}<br>-<br>Present</h6>
+                                            {{end}}
+                                        </div>
                                         <div class="media-body">
                                             <div class="company-logo"><img src="images/{{.CompanyImagePath}}" alt=""></div>
                                             <h6>{{.Position}}</h6>
