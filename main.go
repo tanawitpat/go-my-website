@@ -21,6 +21,7 @@ func main() {
 	http.HandleFunc("/", index)
 	http.HandleFunc("/workexperience", workExperience)
 	http.HandleFunc("/education", education)
+	http.HandleFunc("/aboutme", aboutMe)
 	http.ListenAndServe(":8050", nil)
 }
 
@@ -46,12 +47,9 @@ func workExperience(w http.ResponseWriter, req *http.Request) {
 }
 
 func education(w http.ResponseWriter, req *http.Request) {
-	// session, err := app.GetMongoSession()
-	// if err != nil {
-	// 	fmt.Println("Cannot get mongo session", err)
-	// }
-	// defer session.Close()
-
-	// workExps, err := education.InquiryEducation(session)
 	tpl.ExecuteTemplate(w, "education.gohtml", nil)
+}
+
+func aboutMe(w http.ResponseWriter, req *http.Request) {
+	tpl.ExecuteTemplate(w, "aboutme.gohtml", nil)
 }
