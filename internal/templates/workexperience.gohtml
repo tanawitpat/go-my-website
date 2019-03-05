@@ -37,11 +37,11 @@
                                     <div class="content">
                                         <div class="media-left">
                                             {{if not .IsCurrentWork}}
-                                                <h6 class="work-duration hidden-xs">{{.StartMonth}} {{.StartYear}}<br>-<br>{{.EndMonth}} {{.EndYear}}</h6>
-                                                <h6 class="work-duration visible-xs">{{.StartMonth}} {{.StartYear}}-{{.EndMonth}} {{.EndYear}}</h6>
+                                                <h6 class="work-duration hidden-xs hidden-sm">{{.StartMonth}} {{.StartYear}}<br>-<br>{{.EndMonth}} {{.EndYear}}</h6>
+                                                <h6 class="work-duration visible-xs visible-sm">{{.StartMonth}} {{.StartYear}}-{{.EndMonth}} {{.EndYear}}</h6>
                                             {{else}}
-                                                <h6 class="work-duration hidden-xs">{{.StartMonth}} {{.StartYear}}<br>-<br>Present</h6>
-                                                <h6 class="work-duration visible-xs">{{.StartMonth}} {{.StartYear}}-Present</h6>
+                                                <h6 class="work-duration hidden-xs hidden-sm">{{.StartMonth}} {{.StartYear}}<br>-<br>Present</h6>
+                                                <h6 class="work-duration visible-xs visible-sm">{{.StartMonth}} {{.StartYear}}-Present</h6>
                                             {{end}}
                                         </div>
                                         <div class="media-body">
