@@ -13,6 +13,5 @@ func InquiryWorkExperience(session *mgo.Session) ([]WorkExperienceDB, error) {
 		fmt.Println("Cannot get work experience from the database: ", err)
 		return workExperience, err
 	}
-	fmt.Println(workExperience)
 	return workExperience, nil
 }
