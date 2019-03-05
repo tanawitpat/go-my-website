@@ -126,3 +126,34 @@ h1, h2, h3, h4, h5, h6 {
 .work-experience .media-body {
 	position: relative;
 }
+
+@media (max-width: 720px) {
+	.media-left {
+		width: 100%;
+		display: inline-block;
+	}
+	.main-content {
+		margin-top:5px !important;
+	}
+	.company-logo {
+		display: none;
+	}
+	.media-body h6 {
+		padding: 0;
+		margin: 5px 0;
+	}
+	.work-experience .work-duration {
+		width: auto;
+		text-align: left;
+		font-style: italic;
+	}
+	.company-name {
+		font-weight: bold;
+	}
+	.company-location {
+		font-weight: bold;
+	}
+	.profile-frame{
+		display: none;
+	}
+}
