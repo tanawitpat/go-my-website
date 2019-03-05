@@ -11,7 +11,7 @@ var CFG = &Configs{}
 
 type Configs struct {
 	MongoDB struct {
-		MongoDBHost  string        `mapstructure:"hosts"`
+		Host         string        `mapstructure:"host"`
 		Timeout      time.Duration `mapstructure:"timeout"`
 		Username     string        `mapstructure:"username"`
 		Password     string        `mapstructure:"password"`

@@ -1,5 +1,5 @@
 mongo_db:
-  hosts: "resume-mongo:27017"
+  host: "resume-mongo:27017"
   timeout: "5s"
   username: "myresume"
   password: "passw0rd"
