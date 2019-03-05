@@ -20,8 +20,6 @@ func main() {
 	http.Handle("/images/", fsStatic)
 	http.HandleFunc("/", index)
 	http.HandleFunc("/workexperience", workExperience)
-	http.HandleFunc("/education", education)
-	http.HandleFunc("/aboutme", aboutMe)
 	http.ListenAndServe(":8050", nil)
 }
 
@@ -44,12 +42,4 @@ func workExperience(w http.ResponseWriter, req *http.Request) {
 
 	workExps, err := workexperience.InquiryWorkExperience(session)
 	tpl.ExecuteTemplate(w, "workexperience.gohtml", workExps)
-}
-
-func education(w http.ResponseWriter, req *http.Request) {
-	tpl.ExecuteTemplate(w, "education.gohtml", nil)
-}
-
-func aboutMe(w http.ResponseWriter, req *http.Request) {
-	tpl.ExecuteTemplate(w, "aboutme.gohtml", nil)
 }
