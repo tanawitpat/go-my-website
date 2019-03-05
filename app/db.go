@@ -8,10 +8,10 @@ import (
 
 func GetMongoSession() (*mgo.Session, error) {
 	mongoDBDialInfo := &mgo.DialInfo{
-		Addrs:    []string{"my-resume-mongo:27017"},
+		Addrs:    []string{"localhost:27017"},
 		Timeout:  5 * time.Second,
-		Database: "myresume",
-		Username: "myresume",
+		Database: "admin",
+		Username: "admin",
 		Password: "passw0rd",
 	}
 

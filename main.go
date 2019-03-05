@@ -15,6 +15,13 @@ func init() {
 }
 
 func main() {
+	log := app.InitLogger()
+
+	if err := app.InitConfig(); err != nil {
+		panic(err)
+	}
+	log.Infof("Initial config: %+v", app.CFG)
+
 	fsStatic := http.FileServer(http.Dir("static"))
 	http.Handle("/css/", fsStatic)
 	http.Handle("/images/", fsStatic)
