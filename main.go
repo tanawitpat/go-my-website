@@ -42,6 +42,7 @@ func index(w http.ResponseWriter, req *http.Request) {
 
 func workExperience(w http.ResponseWriter, req *http.Request) {
 	log := app.InitLoggerEndpoint(req)
+	log.Info("Session started")
 	session, err := app.GetMongoSession()
 	if err != nil {
 		fmt.Println("Cannot get mongo session", err)
@@ -49,6 +50,9 @@ func workExperience(w http.ResponseWriter, req *http.Request) {
 	defer session.Close()
 
 	workExps, err := workexperience.InquiryWorkExperience(session)
+	if err != nil {
+		log.Errorf("Cannot get data from the database: %s", err.Error())
+	}
 	tpl.ExecuteTemplate(w, "workexperience.gohtml", workExps)
 	log.Info("Template was executed successfully")
 }
