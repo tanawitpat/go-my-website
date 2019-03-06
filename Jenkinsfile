@@ -24,7 +24,10 @@ pipeline {
             steps {
                 sh "docker container rm -f go-my-resume"
                 sh """
-                docker run -d --network my-resume --name go-my-resume \
+                docker run -d \
+                --network my-resume \
+                --name go-my-resume \
+                --restart always \
                 -p 40000:8050 \
                 go-my-resume
                 """
